@@ -6,19 +6,19 @@ Script for retrieving historical stock prices
 Examples
 
 Scrape one ticker
-'''
+```
 python3 main.py -t TICKER
-'''
+```
 
 Scrape a list of tickers
-'''
+```
 python3 main.py -tl TICKERLIST
-'''
+```
 
 Scraping from - to a specific date
-'''
+```
 python3 main.py -tl stocks.txt -fd 2020-01-01 -td 2020-12-31
-'''
+```
 
 
 
