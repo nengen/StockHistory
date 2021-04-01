@@ -13,6 +13,7 @@ class Scraper:
 
     def scrape_historical_stocks(self,tickers, from_date,to_date):
         ''' returns a csv of historical prices'''
+        self.setup()
         dates = self.get_date(from_date,to_date) 
         for ticker in tickers:
             url = 'https://query1.finance.yahoo.com/v7/finance/download/%s?period1=%s&period2=%s&interval=1d&events=history&includeAdjustedClose=true' % (ticker,dates[0],dates[1])
@@ -42,11 +43,8 @@ class Scraper:
 
     def setup(self):
         ''' Create stocks.csv file, delete if it already exists '''
-        with open('stocks.csv', mode='w') as stockfile:
+        with open('stocks.csv', mode='w+') as stockfile:
             writer = csv.writer(stockfile,delimiter=',')
-            writer.writerow(['Date','Open','High','Low','Close','Adj_close','Volume'])
+            writer.writerow(['Ticker','Date','Open','High','Low','Close','Adj_close','Volume'])
 
 
-
-test = Scraper(["AAPL","F"])
-test.scrape_historical_stocks(test.tickers,'2012-02-10','2012-03-10')
