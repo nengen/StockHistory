@@ -1,4 +1,4 @@
-# stockstory
+# StockHistory
 
 Script for retrieving historical stock prices. Returns a csv.
 
