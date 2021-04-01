@@ -1,6 +1,6 @@
 # stockstory
 
-Script for retrieving historical stock prices
+Script for retrieving historical stock prices. Returns a csv.
 
 ## Usage
 Examples
